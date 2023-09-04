@@ -1,0 +1,17 @@
+header {
+    background-color: #000;
+    
+    height: 139px;
+    margin: 0;
+    padding: 2%;
+    padding-left: 10%;
+}
+
+@media (max-width: 768px) 
+{
+    header 
+    {
+        height: auto;
+        padding: 2% 10%;
+    }
+}

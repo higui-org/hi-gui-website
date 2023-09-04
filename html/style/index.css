@@ -1,0 +1,198 @@
+@font-face {
+    font-family: hind;
+    src: url(../font/Hind/Bold.ttf);
+    src: url(../font/Hind/Light.ttf);
+    src: url(../font/Hind/Medium.ttf);
+    src: url(../font/Hind/Regular.ttf);
+    src: url(../font/Hind/SemiBold.ttf);
+}
+
+.image-row 
+{
+    display: flex;
+    align-items: center;
+}
+.image-row img 
+{
+    margin-right: 10px;
+}
+
+.logo 
+{
+    display: block;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+.logo:hover 
+{
+    opacity: 1;
+}
+
+body 
+{
+    margin: 0;
+    font-family: hind;
+    background-color: #2C3333;
+    scroll-behavior: smooth;
+}
+
+main 
+{
+    padding: 8%;
+}
+
+nav 
+{
+    display: inline-block;
+    background-color: #000;
+}
+
+nav ul 
+{
+    list-style: none;
+    padding: 0;
+}
+
+nav li 
+{
+    display: inline;
+
+}
+
+.button {
+    background-color: #000;
+    color: #fff;
+    font-size: 20px;
+    padding: 15px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.button:hover 
+{
+    background-color: #0E8388;
+}
+
+a 
+{
+    font-size: 24px;
+    color: #0E8388;
+    text-decoration: none;
+}
+
+p 
+{
+    font-size: 22px;
+    margin-left: 4px;
+    color: #CBE4DE;
+}
+
+h1, h2, h3, h4, h5, h6 
+{
+    padding-bottom: 0px;
+    color: #fff;
+    font-size: 40px;
+}
+
+.hero, .content 
+{
+    padding-left: 15%;
+    padding-right: 15%;
+    padding-top: 50px;
+}
+
+.carousel 
+{
+    box-shadow: 0px 20px 20px rgba(0, 0, 0, 1);
+    margin: 5%;
+    position: relative;
+    overflow: hidden;
+    
+}
+
+.carousel__item 
+{
+    background: #000;
+    padding: 8px;
+    font-size: 22px;
+    color: #fff;
+    display: none;
+}
+
+.carousel__item img 
+{
+    width: 100%;
+    height: auto;
+}
+
+.carousel__item--selected
+{
+    display: block;
+}
+
+.carousel__nav 
+{
+    width: 100%;
+    padding: 20px 0;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+}
+
+.carousel__button
+{
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.carousel__button--selected
+{
+    background: rgba(255, 255, 255, 0.5);
+}
+
+@media (max-width: 768px) 
+{
+    .logo
+    {
+        display: none;
+    }
+
+    .image-row 
+    {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .image-row img 
+    {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    main 
+    {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    nav li 
+    {
+        margin-right: 10px;
+    }
+
+    h1, h2, h3, h4, h5, h6 
+    {
+        font-size: 30px;
+    }
+
+    .hero, .content 
+    {
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+}
