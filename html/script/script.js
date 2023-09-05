@@ -16,6 +16,7 @@ document.querySelectorAll(".carousel").forEach((carousel) => {
     const buttons = carousel.querySelectorAll(".carousel__button");
     let currentIndex = 0;
     let timer;
+    let touchStartX = null;
 
     function showImage(index) {
         items.forEach((item) =>
@@ -34,8 +35,13 @@ document.querySelectorAll(".carousel").forEach((carousel) => {
         showImage(currentIndex);
     }
 
+    function prevSlide() {
+        currentIndex = (currentIndex - 1 + items.length) % items.length;
+        showImage(currentIndex);
+    }
+
     function startAutoScroll() {
-        timer = setInterval(nextSlide, 1000);
+        timer = setInterval(nextSlide, 3000);
     }
 
     function stopAutoScroll() {
@@ -52,6 +58,26 @@ document.querySelectorAll(".carousel").forEach((carousel) => {
 
     carousel.addEventListener("mouseenter", stopAutoScroll);
     carousel.addEventListener("mouseleave", startAutoScroll);
+
+    carousel.addEventListener("touchstart", (e) => {
+        touchStartX = e.touches[0].clientX;
+    });
+
+    carousel.addEventListener("touchend", (e) => {
+        if (touchStartX === null) return;
+
+        const touchEndX = e.changedTouches[0].clientX;
+        const deltaX = touchEndX - touchStartX;
+
+        if (deltaX > 30) {
+            prevSlide();
+        } else if (deltaX < -30) {
+            nextSlide();
+        }
+
+        touchStartX = null;
+        stopAutoScroll();
+    });
 
     startAutoScroll();
     showImage(currentIndex);

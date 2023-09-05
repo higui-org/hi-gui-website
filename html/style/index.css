@@ -88,25 +88,23 @@ p
 
 h1, h2, h3, h4, h5, h6 
 {
-    padding-bottom: 0px;
     color: #fff;
     font-size: 40px;
 }
 
 .hero, .content 
 {
-    padding-left: 15%;
-    padding-right: 15%;
-    padding-top: 50px;
+    padding: 0 15%;
+    margin: 20px 0;
 }
 
 .carousel 
 {
-    box-shadow: 0px 20px 20px rgba(0, 0, 0, 1);
-    margin: 5%;
+    margin: 3%;
     position: relative;
     overflow: hidden;
-    
+    box-shadow: 0px 20px 20px rgba(0, 0, 0, 1);
+    background-color: #000;
 }
 
 .carousel__item 
@@ -127,6 +125,16 @@ h1, h2, h3, h4, h5, h6
 .carousel__item--selected
 {
     display: block;
+    animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 .carousel__nav 
@@ -144,7 +152,7 @@ h1, h2, h3, h4, h5, h6
     width: 20px;
     height: 20px;
     display: inline-block;
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(50, 50, 50, 1);
     border-radius: 50%;
     margin: 0 5px;
     cursor: pointer;
@@ -152,7 +160,7 @@ h1, h2, h3, h4, h5, h6
 
 .carousel__button--selected
 {
-    background: rgba(255, 255, 255, 0.5);
+    background: rgba(111, 111, 111, 1);
 }
 
 @media (max-width: 768px) 
@@ -194,5 +202,10 @@ h1, h2, h3, h4, h5, h6
     {
         padding-left: 10%;
         padding-right: 10%;
+    }
+
+    .carousel__nav 
+    {
+    display: none;
     }
 }

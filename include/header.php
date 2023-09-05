@@ -18,7 +18,7 @@
         <nav>
             <ul>
             <li><a href="release.php" class="button">Download</a></li>
-                <li><a href="doc.php" class="button">Documentation</a></li>
+                <li><a href="doc.php" class="button">Docs</a></li>
                 <li><a href="https://github.com/setbe/hi-gui-website" class="button" target="_blank">Github</a></li>
             </ul>
         </nav>
