@@ -2,6 +2,9 @@
 $pageTitle = "hiGUI";
 include '../include/header.php';
 ?>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;600&family=Montserrat:wght@300&display=swap');
+</style>
 
 <main>
     <section id="hi" class="hero">
