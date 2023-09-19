@@ -1,6 +1,6 @@
 <?php
 $pageTitle = "higui / doc";
-include '../include/header.php';
+include '../include/head.php';
 ?>
 
 <main>

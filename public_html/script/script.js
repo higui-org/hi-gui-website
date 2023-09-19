@@ -41,7 +41,7 @@ document.querySelectorAll(".carousel").forEach((carousel) => {
     }
 
     function startAutoScroll() {
-        timer = setInterval(nextSlide, 3000);
+        timer = setInterval(nextSlide, 5000);
     }
 
     function stopAutoScroll() {
@@ -64,14 +64,14 @@ document.querySelectorAll(".carousel").forEach((carousel) => {
     });
 
     carousel.addEventListener("touchend", (e) => {
-        if (touchStartX === null) return;
+        if (touchStartY === null) return;
 
-        const touchEndX = e.changedTouches[0].clientX;
-        const deltaX = touchEndX - touchStartX;
+        const touchEndY = e.changedTouches[0].clientY;
+        const deltaY = touchEndY - touchStartY;
 
-        if (deltaX > 30) {
+        if (deltaY > 20) {
             prevSlide();
-        } else if (deltaX < -30) {
+        } else if (deltaY < -20) {
             nextSlide();
         }
 
@@ -82,3 +82,26 @@ document.querySelectorAll(".carousel").forEach((carousel) => {
     startAutoScroll();
     showImage(currentIndex);
 });
+
+const elements = document.querySelectorAll('.element, .element-x');
+
+function isElementInViewport(el) {
+  const rect = el.getBoundingClientRect();
+  return (
+    rect.top >= 0 &&
+    rect.left >= 0 &&
+    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+  );
+}
+
+function checkElements() {
+  elements.forEach((element) => {
+    if (isElementInViewport(element)) {
+      element.classList.add('show');
+    }
+  });
+}
+
+window.addEventListener('scroll', checkElements);
+window.addEventListener('load', checkElements);

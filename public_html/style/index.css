@@ -1,48 +1,41 @@
 @font-face {
-    font-family: hind;
-    src: url(../font/Hind/Bold.ttf);
-    src: url(../font/Hind/Light.ttf);
-    src: url(../font/Hind/Medium.ttf);
-    src: url(../font/Hind/Regular.ttf);
-    src: url(../font/Hind/SemiBold.ttf);
+    font-family: reverance;
+    src: url('../font/AGReverance_Oblique.ttf')
 }
 
-.image-row 
-{
-    display: flex;
-    align-items: center;
-}
-.image-row img 
-{
-    margin-right: 10px;
+@font-face {
+    font-family: concepto;
+    src: url('../font/a_ConceptoTitulNrB&W.ttf')
 }
 
-.logo 
-{
-    display: block;
-    opacity: 0.8;
-    transition: opacity 0.3s ease;
+.icon {
+    filter: invert(1);
+    width: 24px;
+    height: 24px;
 }
-.logo:hover 
+
+.logo img
 {
-    opacity: 1;
+    -webkit-user-drag: none;
 }
 
 body 
 {
     margin: 0;
-    font-family: hind;
-    background-color: #2C3333;
+    font-family: reverance;
+    background-color: #000000;
     scroll-behavior: smooth;
 }
 
 main 
 {
-    padding: 8%;
+    padding: 90px;
 }
 
 nav 
 {
+    margin: 0;
+    margin-left: 10%;
     display: inline-block;
     background-color: #000;
 }
@@ -56,7 +49,6 @@ nav ul
 nav li 
 {
     display: inline;
-
 }
 
 .button {
@@ -77,19 +69,36 @@ a
     font-size: 24px;
     color: #0E8388;
     text-decoration: none;
+    transition: 0.34s cubic-bezier(0.165, 0.84, 0.44, 1);
+} a:hover
+{
+    color: #86cce7;
+    transition: 0.34s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+li a:hover 
+{
+    color: #000;
+    transition: 0.14s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 p 
 {
-    font-size: 22px;
+    font-size: 24px;
     margin-left: 4px;
-    color: #CBE4DE;
+    color: #dee7e5;
 }
 
 h1, h2, h3, h4, h5, h6 
 {
+    font-family: concepto;
     color: #fff;
-    font-size: 40px;
+    font-size: 64px;
+}
+
+#hi 
+{
+    text-align: center;
 }
 
 .hero, .content 
@@ -100,7 +109,10 @@ h1, h2, h3, h4, h5, h6
 
 .carousel 
 {
-    margin: 3%;
+    margin: 10%;
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-top: 300px;
     position: relative;
     overflow: hidden;
     box-shadow: 0px 20px 20px rgba(0, 0, 0, 1);
@@ -113,6 +125,7 @@ h1, h2, h3, h4, h5, h6
     padding: 8px;
     font-size: 22px;
     color: #fff;
+    animation: fadeOut 1s ease-out;
     display: none;
 }
 
@@ -125,15 +138,26 @@ h1, h2, h3, h4, h5, h6
 .carousel__item--selected
 {
     display: block;
-    animation: fadeIn 0.5s ease-out;
+    animation: fadeIn 1s cubic-bezier(0.200, 0.180, 0.090, 0.795);
 }
 
 @keyframes fadeIn {
     from {
+        transform: translateY(-40%);
         opacity: 0;
     }
     to {
+        transform: translateY(0%);
         opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
     }
 }
 
@@ -142,7 +166,7 @@ h1, h2, h3, h4, h5, h6
     width: 100%;
     padding: 20px 0;
     position: absolute;
-    bottom: 0;
+    bottom: -20px;
     left: 0;
     text-align: center;
 }
@@ -163,7 +187,7 @@ h1, h2, h3, h4, h5, h6
     background: rgba(111, 111, 111, 1);
 }
 
-@media (max-width: 768px) 
+@media (max-width: 1200px) 
 {
     .logo
     {
@@ -184,8 +208,20 @@ h1, h2, h3, h4, h5, h6
 
     main 
     {
-        padding-left: 5%;
-        padding-right: 5%;
+        padding: 0%;
+    }
+
+    nav 
+    {
+        padding: 0%;
+        display: inline-block;
+        background-color: #000;
+    }
+
+    .carousel 
+    {
+        margin: 0%;
+        padding: 0%;
     }
 
     nav li 
@@ -200,8 +236,13 @@ h1, h2, h3, h4, h5, h6
 
     .hero, .content 
     {
-        padding-left: 10%;
-        padding-right: 10%;
+        padding-left: 3%;
+        padding-right: 3%;
+    }
+
+    .icon
+    {
+        display: none;
     }
 
     .carousel__nav 

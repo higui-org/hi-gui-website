@@ -1,15 +1,17 @@
 <?php
 $pageTitle = "hiGUI";
+include '../include/head.php';
 include '../include/header.php';
 ?>
 
 <main>
-    <section id="hi" class="hero">
-        <h2>You have finally found a powerful library for your GUIs in OpenGL metauniverse.</h2>
+    <section id="hi" class="element hero">
+    <div class="element logo">
+    <img src="image/higui.png"/>
+    </div>
+        <h1>a GUI in the OpenGL metauniverse.</h2>
 
-        <p>hiGUI provides a lightweight GUI implementation into your C++ code.
-        </br>This library uses third-party libraries as <a href="https://www.opengl.org/">Opengl</a> 
-        and <a href="https://www.glfw.org/">GLFW</a> to draw GUI and handle events.</p>
+        <p>hiGUI provides a lightweight GUI implementation into your C++ code.</p>
 
         <a href="doc.php" class="cta-button">Learn More</a>
     </section>
@@ -23,8 +25,12 @@ include '../include/header.php';
     </div>
 
     </br>
-    <section id="doc" class="content">
+    <section id="doc" class="element content">
         <h2>Documentation</h2>
+        <p>This library uses third-party libraries as <a href="https://www.opengl.org/">Opengl</a> 
+        and <a href="https://www.glfw.org/">GLFW</a> to draw GUI and handle events.
+        </p>
+
         <p>We tried to make the documentation as if you are reading a children's book.
         </br>Our documentation provides in-depth information about using hiGUI in your projects.
         </p>
@@ -34,6 +40,13 @@ include '../include/header.php';
     </section>
 
     <script src="script/script.js"></script>
+
+    <script>
+  document.addEventListener("contextmenu", function(e) {
+    e.preventDefault();
+  });
+</script>
+
 </main>
 
 <?php

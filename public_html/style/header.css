@@ -1,7 +1,28 @@
+.element {
+    opacity: 0.0;
+    transform: translateY(20px);
+    transition: opacity 0.4s, transform 1.7s cubic-bezier(0.380, 0.300, 0.000, 1.020);
+  }
+  
+  .element.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .element-x {
+    opacity: 0.0;
+    transform: translateX(120px);
+    transition: opacity 1.4s, transform 1s cubic-bezier(0.295, 0.025, 0.310, 0.975);
+  }
+  
+  .element-x.show {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+
 header {
     background-color: #000;
-    
-    height: 139px;
     margin: 0;
     padding: 2%;
     padding-left: 10%;
@@ -13,5 +34,14 @@ header {
     {
         height: auto;
         padding: 2% 10%;
+    }
+}
+
+@keyframes slide {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-50%);
     }
 }
