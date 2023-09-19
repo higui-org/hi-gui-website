@@ -16,7 +16,7 @@ document.querySelectorAll(".carousel").forEach((carousel) => {
     const buttons = carousel.querySelectorAll(".carousel__button");
     let currentIndex = 0;
     let timer;
-    let touchStartX = null;
+    let touchStartY = null;
 
     function showImage(index) {
         items.forEach((item) =>
@@ -60,7 +60,7 @@ document.querySelectorAll(".carousel").forEach((carousel) => {
     carousel.addEventListener("mouseleave", startAutoScroll);
 
     carousel.addEventListener("touchstart", (e) => {
-        touchStartX = e.touches[0].clientX;
+        touchStartY = e.touches[0].clientY;
     });
 
     carousel.addEventListener("touchend", (e) => {
@@ -75,7 +75,7 @@ document.querySelectorAll(".carousel").forEach((carousel) => {
             nextSlide();
         }
 
-        touchStartX = null;
+        touchStartY = null;
         stopAutoScroll();
     });
 
