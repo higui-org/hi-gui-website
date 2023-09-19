@@ -25,17 +25,17 @@ include '../include/header.php';
     </div>
 
     </br>
-    <section id="doc" class="element content">
+    <section id="doc" class="content">
         <h2>Documentation</h2>
-        <p>This library uses third-party libraries as <a href="https://www.opengl.org/">Opengl</a> 
+        <p class="element">This library uses third-party libraries as <a href="https://www.opengl.org/">Opengl</a> 
         and <a href="https://www.glfw.org/">GLFW</a> to draw GUI and handle events.
         </p>
 
-        <p>We tried to make the documentation as if you are reading a children's book.
+        <p class="element">We tried to make the documentation as if you are reading a children's book.
         </br>Our documentation provides in-depth information about using hiGUI in your projects.
         </p>
 
-        <p>We have added as many visual concepts as possible to the documentation, but with code examples
+        <p class="element">We have added as many visual concepts as possible to the documentation, but with code examples
         </br>so that anyone can freely, after reading it once, write it in their code a lot.</p>
     </section>
 
